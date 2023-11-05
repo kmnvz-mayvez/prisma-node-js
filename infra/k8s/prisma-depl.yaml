@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prisma-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prisma
+  template:
+    metadata:
+      labels:
+        app: prisma
+    spec:
+      containers:
+        - name: prisma
+          image: prisma/user 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prisma-srv
+spec:
+  selector:
+    app: prisma
+  ports:
+    - name: prisma
+      protocol: TCP
+      port: 5000
+      targetPort: 5000

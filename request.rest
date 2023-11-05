@@ -1,0 +1,18 @@
+//FOR USER
+GET http://localhost:5000/user
+###
+POST http://localhost:5000/user
+Content-Type: application/json
+
+{
+    "name" : "test10",
+    "email" : "test10@gmail.com"
+}
+###
+GET http://localhost:5000/user/7859eb7b-d128-4e9d-bc97-e8ffb5e1d9a5
+
+// error response
+###
+GET http://localhost:5000/euabdua
+###
+GET http://localhost:5000/user/7859eb7b-smimed-msamskma-mdemmdem
